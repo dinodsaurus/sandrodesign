@@ -49,6 +49,10 @@ function getDefaultModules() {
         loader: 'url-loader?limit=8192'
       },
       {
+        test: /\.json/,
+        loader: 'json-loader'
+      },
+      {
         test   : /\.(otf|ttf|eot|svg|woff(2))(\?[a-z0-9]+)?$/,
         loader : 'file-loader'
       }
@@ -58,7 +62,7 @@ function getDefaultModules() {
 
 module.exports = {
   srcPath: srcPath,
-  publicPath: '/assets/',
+  publicPath: '/new/assets/',
   port: dfltPort,
   getDefaultModules: getDefaultModules
 };
