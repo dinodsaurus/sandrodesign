@@ -1,22 +1,32 @@
 import 'styles/slider.styl'
 
-import React from 'react';
+import React from 'react'
+import axios from 'axios'
 
-import Projects from '../projects.json';
-import img from '../images/concert.jpg'
 class Slider extends React.Component {
   constructor() {
     super()
     this.state = {
       current: 0,
-      projects: Projects.projects
+      projects: []
     }
   }
   componentDidMount() {
-    window.addEventListener('keydown', this.keyPress.bind(this));
+    this.loadProjects()
+    window.addEventListener('keydown', this.keyPress.bind(this))
   }
   componentWillUnmount() {
-    window.removeEventListener('keydown', this.keyPress.bind(this));
+    window.removeEventListener('keydown', this.keyPress.bind(this))
+  }
+  loadProjects() {
+    const self = this
+    axios.get('/projects.json')
+      .then( response => {
+        self.setState({projects: response.data.projects})
+      })
+      .catch( response => {
+        console.log(response)
+      });
   }
   keyPress(key){
     if(key.which === 37) {
@@ -45,9 +55,12 @@ class Slider extends React.Component {
     this.props.projectUpdate(this.state.projects[curr])
   }
   render() {
+    if(!this.state.projects.length){
+      return <div></div>
+    }
     const project = this.state.projects[this.state.current]
     const background = {
-      backgroundImage: `url('${img}')`
+      backgroundImage: `url('${project.img}')`
     }
     const color = {
       color: project.color || 'white'

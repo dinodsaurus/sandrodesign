@@ -11,7 +11,7 @@ class Header extends React.Component {
       <div className="header">
         <h1 style={color}>Studio Sandro Dujmenovic</h1>
         <h2 style={color}>Art Direction — Design</h2>
-        <a className="cont" onClick={this.props.toggleContact}>contact</a>
+        <a style={color} className="cont" onClick={this.props.toggleContact}>contact</a>
       </div>
     );
   }
