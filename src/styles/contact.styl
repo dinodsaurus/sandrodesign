@@ -1,10 +1,11 @@
+@import "colors.styl"
 .contact
   position:absolute
   top:-100%
   left:0
   height:100%
   width:100%
-  background:#777777
+  background: $grey
   z-index:50
   transition: top .3s
   font-size:14px
@@ -14,6 +15,13 @@
     top: 50%
     left: 20px
     color: white
+    a
+      text-decoration: none
+      color:white
+      transition: color .3s
+      &:hover
+        color:#ccc
+
 .true
   .contact
     top:0

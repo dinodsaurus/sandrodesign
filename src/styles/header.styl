@@ -1,23 +1,42 @@
+@import 'colors.styl'
 .header
   width: 100%
   position: absolute
   z-index: 100
-  font-size:14px
+  font-size:$fontsize
+  color: $grey
+  &.active
+    h1, h2
+      font-size:0
   h1
-    font-size:14px
+    font-size:$fontsize
+    line-height:$fontsize
     position:absolute
     top:30px
     left: 50px
     font-family: 'Moderat'
+    color: transparent
+    letter-spacing:1px
+    margin:0
+    &.second
+      left: 115px;
+    &:first-letter
+      font-size:$fontsize
   h2
-    font-size:14px
-    width:176px
+    font-size:$fontsize
     position:absolute
-    top:70px
-    left: 50px
-    text-align:center
+    top:48px
+    left: 75px
+    margin: 0
+    &.second
+      left: 131px
+    &:first-letter
+      font-size:$fontsize
   .cont
     position:absolute
     right:50px
-    top:70px
+    top:30px
     cursor:pointer
+    transition: color .3s
+    &:hover
+      color:#ccc!important

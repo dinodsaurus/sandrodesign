@@ -3,16 +3,26 @@ import 'styles/header.styl'
 import React from 'react'
 
 class Header extends React.Component {
+  constructor () {
+    super()
+    this.state = {
+      active: false
+    }
+    setTimeout(() => {
+      this.setState({active: 'active'})
+    }, 2000)
+  }
   render () {
     const color = {
-      color: this.props.project.color || 'white'
+      color: this.props.project.color || '#808080'
     }
-    console.log(color);
     return (
-    <div className='header'>
-      <h1 style={color}>Studio Sandro Dujmenovic</h1>
-      <h2 style={color}>Art Direction — Design</h2>
-      <a style={color} className='cont' onClick={this.props.toggleContact}>contact</a>
+    <div className={`header ${this.state.active}`}>
+      <h1 style={color}>Sandro</h1>
+      <h1 className="second" style={color}>Dujmenovic</h1>
+      <h2 style={color}>Design</h2>
+      <h2 className="second" style={color}>Studio</h2>
+      <a style={color} className='cont' onClick={this.props.toggleContact}>Contact</a>
     </div>
     )
   }

@@ -7,7 +7,16 @@ class Contact extends React.Component {
     return (
       <div className="contact">
         <div className="content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>
+            SDDS is a Zagreb based design studio founded by Sandro Dujmenovic, working in the fields of arts, culture and commerce.
+            The studio works within a wide range of projects, from luxurious branding to heavy duty visual identities and user experience projects. Upcoming projects include custom type design for Museum of Louvre, total design for Unitas, Croatian thread company, user interface and experience for Interfilm,
+            Croatian film production company.<br/><br/>
+            For full portfolio or a collaboration please contact via e-mail.<br/><br/>
+
+            <a href="mailto:i@sandrosandro.com">i@sandrosandro.com</a><br/>
+            +385 (0)98 586 589
+
+          </p>
         </div>
       </div>
     );
