@@ -14,7 +14,10 @@ class Header extends React.Component {
   }
   render () {
     const color = {
-      color: this.props.project.color || '#808080'
+      color: this.props.project.color || 'white'
+    }
+    if(this.props.contact){
+      color.color = 'white'
     }
     return (
     <div className={`header ${this.state.active}`}>

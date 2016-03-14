@@ -23,7 +23,7 @@ class AppComponent extends React.Component {
   render() {
     return (
       <div className={`index ${this.state.contact}`}>
-        <Header project={this.state.project} toggleContact={this.toggleContact.bind(this)}/>
+        <Header contact={this.state.contact} project={this.state.project} toggleContact={this.toggleContact.bind(this)}/>
         <Slider projectUpdate={this.projectUpdate.bind(this)}/>
         <Contact/>
       </div>
