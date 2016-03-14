@@ -11,6 +11,7 @@
   h1
     font-size:$fontsize
     line-height:$fontsize
+    font-weight: normal
     position:absolute
     top:30px
     left: 50px
@@ -20,16 +21,26 @@
     margin:0
     &.second
       left: 115px;
+      @media screen and (max-width: 600px)
+        left: 95px
     &:first-letter
       font-size:$fontsize
+    @media screen and (max-width: 600px)
+      left: 30px
   h2
     font-size:$fontsize
+    font-weight:normal
     position:absolute
     top:48px
     left: 75px
     margin: 0
+    letter-spacing: 1px
+    @media screen and (max-width: 600px)
+      left: 55px
     &.second
-      left: 131px
+      left: 136px
+      @media screen and (max-width: 600px)
+        left: 116px
     &:first-letter
       font-size:$fontsize
   .cont
@@ -38,5 +49,7 @@
     top:30px
     cursor:pointer
     transition: color .3s
+    @media screen and (max-width: 600px)
+      right: 30px
     &:hover
       color:#ccc!important
