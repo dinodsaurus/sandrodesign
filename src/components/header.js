@@ -7,6 +7,7 @@ class Header extends React.Component {
     const color = {
       color: this.props.project.color || 'white'
     }
+    console.log(color);
     return (
     <div className='header'>
       <h1 style={color}>Studio Sandro Dujmenovic</h1>

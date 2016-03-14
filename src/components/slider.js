@@ -23,9 +23,7 @@ class Slider extends React.Component {
     axios.get('/projects.json')
       .then(response => {
         self.setState({projects: response.data.projects})
-      })
-      .catch(response => {
-        console.log(response)
+        this.props.projectUpdate(this.state.projects[0])
       })
   }
   keyPress (key) {
