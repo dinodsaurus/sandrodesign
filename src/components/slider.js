@@ -4,38 +4,38 @@ import React from 'react'
 import axios from 'axios'
 
 class Slider extends React.Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       current: 0,
       projects: []
     }
   }
-  componentDidMount() {
+  componentDidMount () {
     this.loadProjects()
     window.addEventListener('keydown', this.keyPress.bind(this))
   }
-  componentWillUnmount() {
+  componentWillUnmount () {
     window.removeEventListener('keydown', this.keyPress.bind(this))
   }
-  loadProjects() {
+  loadProjects () {
     const self = this
     axios.get('/projects.json')
-      .then( response => {
+      .then(response => {
         self.setState({projects: response.data.projects})
       })
-      .catch( response => {
+      .catch(response => {
         console.log(response)
-      });
+      })
   }
-  keyPress(key){
-    if(key.which === 37) {
+  keyPress (key) {
+    if (key.which === 37) {
       this.prevProject()
-    } else if(key.which === 39) {
+    } else if (key.which === 39) {
       this.nextProject()
     }
   }
-  nextProject() {
+  nextProject () {
     const projects = this.state.projects.length
     const current = this.state.current
     let curr = 0
@@ -45,17 +45,17 @@ class Slider extends React.Component {
     this.setState({current: curr})
     this.props.projectUpdate(this.state.projects[curr])
   }
-  prevProject() {
+  prevProject () {
     const projects = this.state.projects.length
     let curr = projects - 1
-    if (this.state.current >  0) {
+    if (this.state.current > 0) {
       curr--
     }
     this.setState({current: curr})
     this.props.projectUpdate(this.state.projects[curr])
   }
-  render() {
-    if(!this.state.projects.length){
+  render () {
+    if (!this.state.projects.length) {
       return <div></div>
     }
     const project = this.state.projects[this.state.current]
@@ -66,15 +66,15 @@ class Slider extends React.Component {
       color: project.color || 'white'
     }
     return (
-      <div className='slider'>
-        <div className='dir left' onClick={this.prevProject.bind(this)}></div>
-        <div className='dir right' onClick={this.nextProject.bind(this)}></div>
-        <div className='item' style={background}>
-          <h3 style={color}>{project.desc}</h3>
-        </div>
+    <div className='slider'>
+      <div className='dir left' onClick={this.prevProject.bind(this)}></div>
+      <div className='dir right' onClick={this.nextProject.bind(this)}></div>
+      <div className='item' style={background}>
+        <h3 style={color}>{project.name}</h3>
       </div>
-    );
+    </div>
+    )
   }
 }
 
-export default Slider;
+export default Slider
