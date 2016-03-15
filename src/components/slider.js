@@ -24,7 +24,18 @@ class Slider extends React.Component {
       .then(response => {
         self.setState({projects: response.data.projects})
         this.props.projectUpdate(this.state.projects[0])
+        this.loadImages()
       })
+  }
+  loadImages () {
+    let i = 0
+    let p = this.state.projects
+    let downloadingImage = new Image()
+    downloadingImage.src = p[i].img
+    downloadingImage.onload = function(){
+        i++
+        downloadingImage.src = p[i].img
+    };
   }
   keyPress (key) {
     if (key.which === 37) {

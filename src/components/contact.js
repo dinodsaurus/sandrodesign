@@ -6,6 +6,8 @@ class Contact extends React.Component {
   render() {
     return (
       <div className="contact">
+        <div className="close"></div>
+        <div onClick={this.props.toggleContact} className="closeClick"></div>
         <div className="content">
           <p>
             SDDS is a Zagreb based design studio founded by Sandro Dujmenovic, working in the fields of arts, culture and commerce.

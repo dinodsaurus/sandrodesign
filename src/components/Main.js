@@ -25,7 +25,7 @@ class AppComponent extends React.Component {
       <div className={`index ${this.state.contact}`}>
         <Header contact={this.state.contact} project={this.state.project} toggleContact={this.toggleContact.bind(this)}/>
         <Slider projectUpdate={this.projectUpdate.bind(this)}/>
-        <Contact/>
+        <Contact toggleContact={this.toggleContact.bind(this)}/>
       </div>
     );
   }

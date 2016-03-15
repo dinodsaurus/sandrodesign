@@ -9,13 +9,24 @@
   z-index:50
   transition: top .3s
   font-size:14px
+  .close
+    position:absolute
+    width: 100%
+    height:100%
+    background: url('../icons/close.svg')
+    background-position: center center
+  .closeClick
+    position:absolute
+    width: 30%
+    height: 100%
+    left: 35%
+    cursor: pointer
   .content
     position:absolute
     width: 400px
     top: 50%
     left: 20px
     color: white
-    background: url('../icons/close.svg')
     @media screen and (max-width: 900px) and (orientation : landscape)
       top: 100px
       max-width: 600px

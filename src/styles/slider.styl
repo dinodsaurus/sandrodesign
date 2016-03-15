@@ -13,10 +13,20 @@
     height: 100%
     z-index: 10
     cursor: pointer
+    transition: background .3s
+    background-size: auto 100%
+    &:hover
+      background: url("../icons/arrow.svg") no-repeat
+      background-size: cover
+      backgroun-position:center
+      background-color: rgba(0, 0, 0, .3)
     &.left
       left:0
+      transform: rotate(180deg);
+      background-position: left
     &.right
       right: 0
+      background-position: right
   .item
     position:absolute
     top:0
