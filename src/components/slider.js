@@ -18,6 +18,17 @@ class Slider extends React.Component {
   componentWillUnmount () {
     window.removeEventListener('keydown', this.keyPress.bind(this))
   }
+  startInt () {
+    const int = setInterval( () => {
+      this.nextProject()
+    }, 3500)
+    this.setState({interval: int})
+  }
+  clearInt () {
+    clearInterval(this.state.interval)
+    this.setState({interval: {}})
+    this.startInt()
+  }
   loadProjects () {
     const self = this
     axios.get('/projects.json')
@@ -25,6 +36,7 @@ class Slider extends React.Component {
         self.setState({projects: response.data.projects})
         this.props.projectUpdate(this.state.projects[0])
         this.loadImages()
+        this.startInt()
       })
   }
   loadImages () {
@@ -33,8 +45,10 @@ class Slider extends React.Component {
     let downloadingImage = new Image()
     downloadingImage.src = p[i].img
     downloadingImage.onload = function(){
-        i++
+      i++
+      if(p[i]){
         downloadingImage.src = p[i].img
+      }
     };
   }
   keyPress (key) {
@@ -53,15 +67,19 @@ class Slider extends React.Component {
     }
     this.setState({current: curr})
     this.props.projectUpdate(this.state.projects[curr])
+    this.clearInt()
   }
   prevProject () {
-    const projects = this.state.projects.length
-    let curr = projects - 1
+    const projects = this.state.projects.length - 1
+    let curr = this.state.current
     if (this.state.current > 0) {
       curr--
+    } else {
+      curr = projects
     }
     this.setState({current: curr})
     this.props.projectUpdate(this.state.projects[curr])
+    this.clearInt()
   }
   render () {
     if (!this.state.projects.length) {

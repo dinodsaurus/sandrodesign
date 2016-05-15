@@ -1,16 +1,40 @@
 {
  "projects": [
+  {
+     "color": "white",
+     "name": "Stationery for Swiss high-end web development company",
+     "img": "images/neno.jpg"
+   },
+   {
+     "color": "white",
+     "name": "Visual identity for furniture designer and producer",
+     "img": "images/mobiliar.jpg"
+   },
+      {
+     "color": "white",
+     "name": "Total design for Unitas, thread factory, coming soon",
+     "img": "images/unitas.jpg"
+   },
+       {
+     "color": "white",
+     "name": "Total design for Unitas, thread factory, coming soon",
+     "img": "images/samago.jpg"
+   },
+     {
+     "color": "black",
+     "name": "Posters, brochure and visual identity for Indology Conference",
+     "img": "images/mesic_indology_conference.jpg"
+   },
+  {
+     "color": "black",
+     "name": "Interfilm user experience design",
+     "img": "images/interfilm.jpg"
+   },
    {
      "color": "white",
      "name": "Visual identity for a DJ and producer",
-     "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
      "img": "images/aldo.jpg"
-   },
-   {
-     "color": "black",
-     "name": "Interfilm",
-     "desc": "Ovo je malo duzi desc!",
-     "img": "images/interfilm.jpg"
    }
+
  ]
 }
