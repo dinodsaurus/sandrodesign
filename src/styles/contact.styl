@@ -16,11 +16,15 @@
     background: url('../icons/close.svg') no-repeat
     background-position: center center
   .closeClick
+    z-index: 1000
     position:absolute
     width: 30%
     height: 100%
     left: 35%
     cursor: pointer
+    @media screen and (max-width: 600px)
+      width: 100%
+      left: 0
   .content
     position:absolute
     width: 400px
