@@ -20,11 +20,8 @@ class Header extends React.Component {
       color.color = 'white'
     }
     return (
-    <div className={`header ${this.state.active}`}>
-      <h1 style={color}>Sandro</h1>
-      <h1 className="second" style={color}>Dujmenovic</h1>
-      <h2 style={color}>Design</h2>
-      <h2 className="second" style={color}>Studio</h2>
+    <div className="header">
+      <h1 style={color}>Beton</h1>
       <a style={color} className='cont' onClick={this.props.toggleContact}>Contact</a>
     </div>
     )
